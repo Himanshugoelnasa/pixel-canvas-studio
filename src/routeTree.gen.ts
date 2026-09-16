@@ -10,12 +10,39 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiKeysRouteImport } from './routes/api-keys'
+import { Route as BackgroundRemoverRouteImport } from './routes/background-remover'
 import { Route as BatchRouteImport } from './routes/batch'
+import { Route as BillingRouteImport } from './routes/billing'
+import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as EditorRouteImport } from './routes/editor'
+import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GenerateRouteImport } from './routes/generate'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as ModelsRouteImport } from './routes/models'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as TemplatesRouteImport } from './routes/templates'
+import { Route as UpscalerRouteImport } from './routes/upscaler'
+import { Route as UsageRouteImport } from './routes/usage'
+import { Route as VariationsRouteImport } from './routes/variations'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiKeysRoute = ApiKeysRouteImport.update({
+  id: '/api-keys',
+  path: '/api-keys',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BackgroundRemoverRoute = BackgroundRemoverRouteImport.update({
+  id: '/background-remover',
+  path: '/background-remover',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BatchRoute = BatchRouteImport.update({
@@ -23,40 +50,244 @@ const BatchRoute = BatchRouteImport.update({
   path: '/batch',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BillingRoute = BillingRouteImport.update({
+  id: '/billing',
+  path: '/billing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsRoute = CollectionsRouteImport.update({
+  id: '/collections',
+  path: '/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorRoute = EditorRouteImport.update({
+  id: '/editor',
+  path: '/editor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesRoute = FavoritesRouteImport.update({
+  id: '/favorites',
+  path: '/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GenerateRoute = GenerateRouteImport.update({
   id: '/generate',
   path: '/generate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelsRoute = ModelsRouteImport.update({
+  id: '/models',
+  path: '/models',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplatesRoute = TemplatesRouteImport.update({
+  id: '/templates',
+  path: '/templates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UpscalerRoute = UpscalerRouteImport.update({
+  id: '/upscaler',
+  path: '/upscaler',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UsageRoute = UsageRouteImport.update({
+  id: '/usage',
+  path: '/usage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VariationsRoute = VariationsRouteImport.update({
+  id: '/variations',
+  path: '/variations',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api-keys': typeof ApiKeysRoute
+  '/background-remover': typeof BackgroundRemoverRoute
   '/batch': typeof BatchRoute
+  '/billing': typeof BillingRoute
+  '/collections': typeof CollectionsRoute
+  '/editor': typeof EditorRoute
+  '/favorites': typeof FavoritesRoute
+  '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/history': typeof HistoryRoute
+  '/models': typeof ModelsRoute
+  '/notifications': typeof NotificationsRoute
+  '/projects': typeof ProjectsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/templates': typeof TemplatesRoute
+  '/upscaler': typeof UpscalerRoute
+  '/usage': typeof UsageRoute
+  '/variations': typeof VariationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api-keys': typeof ApiKeysRoute
+  '/background-remover': typeof BackgroundRemoverRoute
   '/batch': typeof BatchRoute
+  '/billing': typeof BillingRoute
+  '/collections': typeof CollectionsRoute
+  '/editor': typeof EditorRoute
+  '/favorites': typeof FavoritesRoute
+  '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/history': typeof HistoryRoute
+  '/models': typeof ModelsRoute
+  '/notifications': typeof NotificationsRoute
+  '/projects': typeof ProjectsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/templates': typeof TemplatesRoute
+  '/upscaler': typeof UpscalerRoute
+  '/usage': typeof UsageRoute
+  '/variations': typeof VariationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api-keys': typeof ApiKeysRoute
+  '/background-remover': typeof BackgroundRemoverRoute
   '/batch': typeof BatchRoute
+  '/billing': typeof BillingRoute
+  '/collections': typeof CollectionsRoute
+  '/editor': typeof EditorRoute
+  '/favorites': typeof FavoritesRoute
+  '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/history': typeof HistoryRoute
+  '/models': typeof ModelsRoute
+  '/notifications': typeof NotificationsRoute
+  '/projects': typeof ProjectsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/templates': typeof TemplatesRoute
+  '/upscaler': typeof UpscalerRoute
+  '/usage': typeof UsageRoute
+  '/variations': typeof VariationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/batch' | '/generate'
+  fullPaths:
+    | '/'
+    | '/api-keys'
+    | '/background-remover'
+    | '/batch'
+    | '/billing'
+    | '/collections'
+    | '/editor'
+    | '/favorites'
+    | '/gallery'
+    | '/generate'
+    | '/history'
+    | '/models'
+    | '/notifications'
+    | '/projects'
+    | '/settings'
+    | '/team'
+    | '/templates'
+    | '/upscaler'
+    | '/usage'
+    | '/variations'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/batch' | '/generate'
-  id: '__root__' | '/' | '/batch' | '/generate'
+  to:
+    | '/'
+    | '/api-keys'
+    | '/background-remover'
+    | '/batch'
+    | '/billing'
+    | '/collections'
+    | '/editor'
+    | '/favorites'
+    | '/gallery'
+    | '/generate'
+    | '/history'
+    | '/models'
+    | '/notifications'
+    | '/projects'
+    | '/settings'
+    | '/team'
+    | '/templates'
+    | '/upscaler'
+    | '/usage'
+    | '/variations'
+  id:
+    | '__root__'
+    | '/'
+    | '/api-keys'
+    | '/background-remover'
+    | '/batch'
+    | '/billing'
+    | '/collections'
+    | '/editor'
+    | '/favorites'
+    | '/gallery'
+    | '/generate'
+    | '/history'
+    | '/models'
+    | '/notifications'
+    | '/projects'
+    | '/settings'
+    | '/team'
+    | '/templates'
+    | '/upscaler'
+    | '/usage'
+    | '/variations'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiKeysRoute: typeof ApiKeysRoute
+  BackgroundRemoverRoute: typeof BackgroundRemoverRoute
   BatchRoute: typeof BatchRoute
+  BillingRoute: typeof BillingRoute
+  CollectionsRoute: typeof CollectionsRoute
+  EditorRoute: typeof EditorRoute
+  FavoritesRoute: typeof FavoritesRoute
+  GalleryRoute: typeof GalleryRoute
   GenerateRoute: typeof GenerateRoute
+  HistoryRoute: typeof HistoryRoute
+  ModelsRoute: typeof ModelsRoute
+  NotificationsRoute: typeof NotificationsRoute
+  ProjectsRoute: typeof ProjectsRoute
+  SettingsRoute: typeof SettingsRoute
+  TeamRoute: typeof TeamRoute
+  TemplatesRoute: typeof TemplatesRoute
+  UpscalerRoute: typeof UpscalerRoute
+  UsageRoute: typeof UsageRoute
+  VariationsRoute: typeof VariationsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,11 +299,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api-keys': {
+      id: '/api-keys'
+      path: '/api-keys'
+      fullPath: '/api-keys'
+      preLoaderRoute: typeof ApiKeysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/background-remover': {
+      id: '/background-remover'
+      path: '/background-remover'
+      fullPath: '/background-remover'
+      preLoaderRoute: typeof BackgroundRemoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/batch': {
       id: '/batch'
       path: '/batch'
       fullPath: '/batch'
       preLoaderRoute: typeof BatchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/billing': {
+      id: '/billing'
+      path: '/billing'
+      fullPath: '/billing'
+      preLoaderRoute: typeof BillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections': {
+      id: '/collections'
+      path: '/collections'
+      fullPath: '/collections'
+      preLoaderRoute: typeof CollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editor': {
+      id: '/editor'
+      path: '/editor'
+      fullPath: '/editor'
+      preLoaderRoute: typeof EditorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/generate': {
@@ -82,13 +362,100 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GenerateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/models': {
+      id: '/models'
+      path: '/models'
+      fullPath: '/models'
+      preLoaderRoute: typeof ModelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/templates': {
+      id: '/templates'
+      path: '/templates'
+      fullPath: '/templates'
+      preLoaderRoute: typeof TemplatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upscaler': {
+      id: '/upscaler'
+      path: '/upscaler'
+      fullPath: '/upscaler'
+      preLoaderRoute: typeof UpscalerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/usage': {
+      id: '/usage'
+      path: '/usage'
+      fullPath: '/usage'
+      preLoaderRoute: typeof UsageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/variations': {
+      id: '/variations'
+      path: '/variations'
+      fullPath: '/variations'
+      preLoaderRoute: typeof VariationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiKeysRoute: ApiKeysRoute,
+  BackgroundRemoverRoute: BackgroundRemoverRoute,
   BatchRoute: BatchRoute,
+  BillingRoute: BillingRoute,
+  CollectionsRoute: CollectionsRoute,
+  EditorRoute: EditorRoute,
+  FavoritesRoute: FavoritesRoute,
+  GalleryRoute: GalleryRoute,
   GenerateRoute: GenerateRoute,
+  HistoryRoute: HistoryRoute,
+  ModelsRoute: ModelsRoute,
+  NotificationsRoute: NotificationsRoute,
+  ProjectsRoute: ProjectsRoute,
+  SettingsRoute: SettingsRoute,
+  TeamRoute: TeamRoute,
+  TemplatesRoute: TemplatesRoute,
+  UpscalerRoute: UpscalerRoute,
+  UsageRoute: UsageRoute,
+  VariationsRoute: VariationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

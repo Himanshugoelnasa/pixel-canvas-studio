@@ -11,7 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BatchRouteImport } from './routes/batch'
+import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GenerateRouteImport } from './routes/generate'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as ModelsRouteImport } from './routes/models'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as TemplatesRouteImport } from './routes/templates'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +30,134 @@ const BatchRoute = BatchRouteImport.update({
   path: '/batch',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollectionsRoute = CollectionsRouteImport.update({
+  id: '/collections',
+  path: '/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesRoute = FavoritesRouteImport.update({
+  id: '/favorites',
+  path: '/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GenerateRoute = GenerateRouteImport.update({
   id: '/generate',
   path: '/generate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelsRoute = ModelsRouteImport.update({
+  id: '/models',
+  path: '/models',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplatesRoute = TemplatesRouteImport.update({
+  id: '/templates',
+  path: '/templates',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/batch': typeof BatchRoute
+  '/collections': typeof CollectionsRoute
+  '/favorites': typeof FavoritesRoute
+  '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/history': typeof HistoryRoute
+  '/models': typeof ModelsRoute
+  '/projects': typeof ProjectsRoute
+  '/templates': typeof TemplatesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/batch': typeof BatchRoute
+  '/collections': typeof CollectionsRoute
+  '/favorites': typeof FavoritesRoute
+  '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/history': typeof HistoryRoute
+  '/models': typeof ModelsRoute
+  '/projects': typeof ProjectsRoute
+  '/templates': typeof TemplatesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/batch': typeof BatchRoute
+  '/collections': typeof CollectionsRoute
+  '/favorites': typeof FavoritesRoute
+  '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/history': typeof HistoryRoute
+  '/models': typeof ModelsRoute
+  '/projects': typeof ProjectsRoute
+  '/templates': typeof TemplatesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/batch' | '/generate'
+  fullPaths:
+    | '/'
+    | '/batch'
+    | '/collections'
+    | '/favorites'
+    | '/gallery'
+    | '/generate'
+    | '/history'
+    | '/models'
+    | '/projects'
+    | '/templates'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/batch' | '/generate'
-  id: '__root__' | '/' | '/batch' | '/generate'
+  to:
+    | '/'
+    | '/batch'
+    | '/collections'
+    | '/favorites'
+    | '/gallery'
+    | '/generate'
+    | '/history'
+    | '/models'
+    | '/projects'
+    | '/templates'
+  id:
+    | '__root__'
+    | '/'
+    | '/batch'
+    | '/collections'
+    | '/favorites'
+    | '/gallery'
+    | '/generate'
+    | '/history'
+    | '/models'
+    | '/projects'
+    | '/templates'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BatchRoute: typeof BatchRoute
+  CollectionsRoute: typeof CollectionsRoute
+  FavoritesRoute: typeof FavoritesRoute
+  GalleryRoute: typeof GalleryRoute
   GenerateRoute: typeof GenerateRoute
+  HistoryRoute: typeof HistoryRoute
+  ModelsRoute: typeof ModelsRoute
+  ProjectsRoute: typeof ProjectsRoute
+  TemplatesRoute: typeof TemplatesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,11 +176,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BatchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collections': {
+      id: '/collections'
+      path: '/collections'
+      fullPath: '/collections'
+      preLoaderRoute: typeof CollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/generate': {
       id: '/generate'
       path: '/generate'
       fullPath: '/generate'
       preLoaderRoute: typeof GenerateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/models': {
+      id: '/models'
+      path: '/models'
+      fullPath: '/models'
+      preLoaderRoute: typeof ModelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/templates': {
+      id: '/templates'
+      path: '/templates'
+      fullPath: '/templates'
+      preLoaderRoute: typeof TemplatesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,7 +238,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BatchRoute: BatchRoute,
+  CollectionsRoute: CollectionsRoute,
+  FavoritesRoute: FavoritesRoute,
+  GalleryRoute: GalleryRoute,
   GenerateRoute: GenerateRoute,
+  HistoryRoute: HistoryRoute,
+  ModelsRoute: ModelsRoute,
+  ProjectsRoute: ProjectsRoute,
+  TemplatesRoute: TemplatesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

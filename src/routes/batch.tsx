@@ -184,7 +184,7 @@ function BatchPage() {
               ].map(([label, opts]) => (
                 <div key={label as string} className="space-y-1.5">
                   <Label className="text-xs text-muted-foreground">{label as string}</Label>
-                  <Select defaultValue={(opts as string[])[0]}>
+                  <Select defaultValue={(opts as string[])[0]!}>
                     <SelectTrigger aria-label={label as string}><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {(opts as string[]).map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}

@@ -43,7 +43,7 @@ function BgRemoverPage() {
               <p className="mt-2 text-sm font-medium">Drag & drop an image</p>
               <p className="text-xs text-muted-foreground">PNG, JPG or WebP up to 25 MB</p>
             </div>
-            <CompareSlider before={generations[9].image} after={generations[14].image} labelBefore="Original" labelAfter={opt} />
+            <CompareSlider before={generations[9]!.image} after={generations[14]!.image} labelBefore="Original" labelAfter={opt} />
             <div className="flex flex-wrap gap-2">
               <Button className="gradient-brand text-white" onClick={() => toast.success("Background removed")}><Eraser className="mr-2 size-4" />Remove background</Button>
               <Button variant="secondary" onClick={() => toast.success("Download started")}><Download className="mr-2 size-4" />Download PNG</Button>

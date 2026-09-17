@@ -77,16 +77,16 @@ const RESOLUTIONS = ["1024 × 1024", "1536 × 1024", "2048 × 2048", "1024 × 17
 const ASPECTS = ["1:1", "16:9", "4:3", "9:16", "3:2"];
 
 export const generations: Generation[] = Array.from({ length: 36 }, (_, i) => {
-  const [prompt, style, cat] = PROMPTS[i % PROMPTS.length];
+  const [prompt, style, cat] = PROMPTS[i % PROMPTS.length]!;
   const tall = i % 3 === 0;
   return {
     id: `gen_${(1000 + i).toString()}`,
     prompt,
     negativePrompt: "blurry, low quality, distorted hands, extra fingers, artifacts",
-    model: MODELS_SHORT[i % MODELS_SHORT.length],
+    model: MODELS_SHORT[i % MODELS_SHORT.length]!,
     style,
-    resolution: RESOLUTIONS[i % RESOLUTIONS.length],
-    aspect: ASPECTS[i % ASPECTS.length],
+    resolution: RESOLUTIONS[i % RESOLUTIONS.length]!,
+    aspect: ASPECTS[i % ASPECTS.length]!,
     seed: 100000 + i * 7331,
     steps: 28 + (i % 4) * 6,
     cfg: 4.5 + (i % 5) * 0.5,
@@ -94,7 +94,7 @@ export const generations: Generation[] = Array.from({ length: 36 }, (_, i) => {
     timeSec: 3.2 + (i % 7) * 1.4,
     createdAt: new Date(Date.now() - i * 3600_000 * 7).toISOString(),
     favorite: i % 5 === 0,
-    project: PROJECT_NAMES[i % PROJECT_NAMES.length],
+    project: PROJECT_NAMES[i % PROJECT_NAMES.length]!,
     tags: [cat, style.toLowerCase(), "demo"],
     category: cat,
     image: img(`pf-${cat}-${i}`, 800, tall ? 1100 : 800),
@@ -117,11 +117,11 @@ export const projects: Project[] = PROJECT_NAMES.map((name, i) => ({
   id: `prj_${i + 1}`,
   name,
   assets: 48 + i * 37,
-  updated: ["2 hours ago", "Yesterday", "3 days ago", "Last week"][i % 4],
-  owner: ["Himanshu Goel", "Aria Chen", "Marcus Webb"][i % 3],
+  updated: ["2 hours ago", "Yesterday", "3 days ago", "Last week"][i % 4]!,
+  owner: ["Himanshu Goel", "Aria Chen", "Marcus Webb"][i % 3]!,
   storage: `${(1.2 + i * 0.8).toFixed(1)} GB`,
-  cover: generations[i * 2 % generations.length].image,
-  color: ["from-violet-500", "from-cyan-500", "from-fuchsia-500", "from-indigo-500"][i % 4],
+  cover: generations[(i * 2) % generations.length]!.image,
+  color: ["from-violet-500", "from-cyan-500", "from-fuchsia-500", "from-indigo-500"][i % 4]!,
 }));
 
 export type AiModel = {
@@ -203,7 +203,7 @@ export const templates: Template[] = [
   prompt: prompt as string,
   settings: settings as string[],
   uses: 120 + i * 47,
-  cover: generations[(i * 3 + 1) % generations.length].image,
+  cover: generations[(i * 3 + 1) % generations.length]!.image,
 }));
 
 export type Notification = {

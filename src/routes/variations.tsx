@@ -26,7 +26,7 @@ export const Route = createFileRoute("/variations")({
 function VariationsPage() {
   const [count, setCount] = useState(6);
   const [active, setActive] = useState<Generation | null>(null);
-  const source = generations[5];
+  const source = generations[5]!;
 
   return (
     <AppShell>

@@ -166,7 +166,7 @@ function SidebarFooter({ collapsed }: { collapsed?: boolean }) {
 
 function GlobalSearch({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }) {
   return (
-    <CommandDialog open={open} onOpenChange={setOpen} title="Search" description="Search everything">
+    <CommandDialog open={open} onOpenChange={setOpen}>
       <CommandInput placeholder="Search images, projects, templates, models, batch jobs…" />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>

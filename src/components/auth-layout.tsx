@@ -20,7 +20,7 @@ export function AuthLayout({
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
       <div className="relative hidden overflow-hidden lg:block">
-        <img src={generations[0].image} alt="AI generated artwork" className="absolute inset-0 size-full object-cover" />
+        <img src={generations[0]!.image} alt="AI generated artwork" className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-violet-700/70 via-background/60 to-cyan-500/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         <div className="relative flex h-full flex-col justify-between p-10">

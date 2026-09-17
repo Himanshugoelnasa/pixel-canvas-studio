@@ -78,7 +78,7 @@ export function ImageCard({
           {selectable ? (
             <div className="absolute left-3 top-3 z-10">
               <Checkbox
-                checked={selected}
+                checked={selected ?? false}
                 onCheckedChange={() => onSelect?.(gen.id)}
                 aria-label="Select image"
                 className="size-5 border-white/60 bg-black/40"
@@ -131,7 +131,7 @@ export function ImageCard({
                   <DropdownMenuItem onClick={() => act("Prompt copied")}><Copy className="mr-2 size-4" />Copy prompt</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => act("Share link copied")}><Share2 className="mr-2 size-4" />Share</DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem variant="destructive" onClick={() => act("Image deleted")}><Trash2 className="mr-2 size-4" />Delete</DropdownMenuItem>
+                  <DropdownMenuItem className="text-destructive" onClick={() => act("Image deleted")}><Trash2 className="mr-2 size-4" />Delete</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -163,7 +163,7 @@ export function ImageCard({
         <ContextMenuItem onClick={() => act("Moved to project")}>Move to project</ContextMenuItem>
         <ContextMenuItem onClick={() => act("Image added to favorites")}>Add to favorites</ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuItem variant="destructive" onClick={() => act("Image deleted")}>Delete</ContextMenuItem>
+        <ContextMenuItem className="text-destructive" onClick={() => act("Image deleted")}>Delete</ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>
   );

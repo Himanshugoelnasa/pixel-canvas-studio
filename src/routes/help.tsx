@@ -56,7 +56,7 @@ function HelpPage() {
           <h2 className="mb-2 font-display text-sm font-semibold"><LifeBuoy className="mr-2 inline size-4 text-primary" />Frequently asked</h2>
           <Accordion type="single" collapsible>
             {FAQ.map(([q, a]) => (
-              <AccordionItem key={q} value={q}>
+              <AccordionItem key={q} value={q!}>
                 <AccordionTrigger className="text-sm">{q}</AccordionTrigger>
                 <AccordionContent className="text-sm text-muted-foreground">{a}</AccordionContent>
               </AccordionItem>

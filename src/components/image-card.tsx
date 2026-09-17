@@ -193,7 +193,6 @@ export function ImageDetailModal({
   return (
     <Dialog open={!!gen} onOpenChange={(o) => !o && onClose()}>
       <DialogContent
-        showCloseButton
         className="max-w-6xl overflow-hidden border-border/60 bg-card/90 p-0 backdrop-blur-2xl"
       >
         <div className="grid max-h-[85vh] grid-cols-1 overflow-y-auto lg:grid-cols-[1.5fr_1fr]">

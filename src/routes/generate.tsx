@@ -98,7 +98,7 @@ function Guidance({ label, hint, value, min, max, step, onChange }: {
         </Tooltip>
         <span className="font-medium">{value}</span>
       </div>
-      <Slider value={[value]} min={min} max={max} step={step} onValueChange={([v]) => onChange(v)} aria-label={label} />
+      <Slider value={[value]} min={min} max={max} step={step} onValueChange={([v]) => onChange(v!)} aria-label={label} />
     </div>
   );
 }
@@ -165,7 +165,7 @@ function SettingsPanel(props: ReturnType<typeof useStudio>) {
                 </Select>
                 <Slider
                   value={[r.weight]} min={0} max={100} step={5}
-                  onValueChange={([v]) => setRefs(refs.map((x, j) => (j === i ? { ...x, weight: v } : x)))}
+                  onValueChange={([v]) => setRefs(refs.map((x, j) => (j === i ? { ...x, weight: v! } : x)))}
                   aria-label="Reference weight"
                 />
               </div>
@@ -241,7 +241,7 @@ function SettingsPanel(props: ReturnType<typeof useStudio>) {
           <Label className="text-xs uppercase tracking-wider text-muted-foreground">Number of images</Label>
           <span className="font-medium">{count}</span>
         </div>
-        <Slider value={[count]} min={1} max={16} step={1} onValueChange={([v]) => setCount(v)} aria-label="Number of images" />
+        <Slider value={[count]} min={1} max={16} step={1} onValueChange={([v]) => setCount(v!)} aria-label="Number of images" />
         <p className="text-[11px] text-muted-foreground">Generate {count} images · ~{credits} credits</p>
       </div>
 
@@ -312,7 +312,7 @@ function SettingsPanel(props: ReturnType<typeof useStudio>) {
                   <SelectItem value="ddim">DDIM</SelectItem>
                 </SelectContent>
               </Select>
-              <Guidance label="Steps" hint="Denoising steps" value={guidance.Steps ?? 34} min={10} max={80} step={1} onChange={(v) => setGuidance({ ...guidance, Steps: v })} />
+              <Guidance label="Steps" hint="Denoising steps" value={guidance["Steps"] ?? 34} min={10} max={80} step={1} onChange={(v) => setGuidance({ ...guidance, Steps: v })} />
               <Select defaultValue="karras"><SelectTrigger className="h-8" aria-label="Scheduler"><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="karras">Karras</SelectItem>
@@ -354,7 +354,7 @@ function SettingsPanel(props: ReturnType<typeof useStudio>) {
             ].map(([label, opts]) => (
               <div key={label as string} className="space-y-1">
                 <Label className="text-[11px] text-muted-foreground">{label as string}</Label>
-                <Select defaultValue={(opts as string[])[0]}>
+                <Select defaultValue={(opts as string[])[0]!}>
                   <SelectTrigger className="h-8" aria-label={label as string}><SelectValue /></SelectTrigger>
                   <SelectContent>
                     {(opts as string[]).map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}
@@ -413,7 +413,7 @@ function useStudio() {
 
 function GeneratePage() {
   const studio = useStudio();
-  const [mode, setMode] = useState(MODES[0]);
+  const [mode, setMode] = useState(MODES[0]!);
   const [prompt, setPrompt] = useState(
     "Futuristic cyberpunk city at night, rain-slick streets, neon reflections, cinematic lighting, ultra detailed",
   );
@@ -477,7 +477,7 @@ function GeneratePage() {
                     {queue.map((item) => (
                       <div key={item.id} className="rounded-xl border border-border/60 p-3">
                         <div className="flex items-start gap-3">
-                          <img src={generations[0].image} alt="" className="size-12 rounded-lg object-cover" />
+                          <img src={generations[0]!.image} alt="" className="size-12 rounded-lg object-cover" />
                           <div className="min-w-0 flex-1">
                             <p className="truncate text-sm font-medium">{item.prompt}</p>
                             <p className="text-[11px] text-muted-foreground">{item.model} · {item.credits} credits</p>
@@ -542,7 +542,7 @@ function GeneratePage() {
                 <Button variant="secondary" onClick={() => { setPrompt((p) => `${p}, hyper-detailed, volumetric lighting, 8k`); toast.success("Prompt enhanced"); }}>
                   <Wand2 className="mr-2 size-4" />Enhance Prompt
                 </Button>
-                <Button variant="outline" onClick={() => setPrompt(randomPrompts[Math.floor(Math.random() * randomPrompts.length)])}>
+                <Button variant="outline" onClick={() => setPrompt(randomPrompts[Math.floor(Math.random() * randomPrompts.length)]!)}>
                   <Shuffle className="mr-2 size-4" />Random Prompt
                 </Button>
                 <Button variant="ghost" onClick={() => setPrompt("")}><Eraser className="mr-2 size-4" />Clear</Button>

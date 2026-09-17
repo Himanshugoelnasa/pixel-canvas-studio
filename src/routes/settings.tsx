@@ -71,7 +71,7 @@ function SettingsPage() {
           <TabsContent value="generation">
             <GlassCard className="space-y-2">
               <Row label="Default model">
-                <Select defaultValue={models[0].name}><SelectTrigger aria-label="Default model"><SelectValue /></SelectTrigger>
+                <Select defaultValue={models[0]!.name}><SelectTrigger aria-label="Default model"><SelectValue /></SelectTrigger>
                   <SelectContent>{models.map((m) => <SelectItem key={m.id} value={m.name}>{m.name}</SelectItem>)}</SelectContent>
                 </Select>
               </Row>

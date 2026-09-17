@@ -26,7 +26,7 @@ export const Route = createFileRoute("/variations")({
 function VariationsPage() {
   const [count, setCount] = useState(6);
   const [active, setActive] = useState<Generation | null>(null);
-  const source = generations[5];
+  const source = generations[5]!;
 
   return (
     <AppShell>
@@ -47,7 +47,7 @@ function VariationsPage() {
             ))}
             <div className="space-y-2">
               <div className="flex justify-between text-xs"><Label className="text-muted-foreground">Variations</Label><span>{count}</span></div>
-              <Slider value={[count]} min={2} max={12} step={2} onValueChange={([v]) => setCount(v)} aria-label="Number of variations" />
+              <Slider value={[count]} min={2} max={12} step={2} onValueChange={([v]) => setCount(v!)} aria-label="Number of variations" />
             </div>
             <Button className="w-full gradient-brand text-white" onClick={() => toast.success(`${count} variations queued`)}>
               <Sparkles className="mr-2 size-4" />Generate variations

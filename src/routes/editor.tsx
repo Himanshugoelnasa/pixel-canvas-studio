@@ -80,7 +80,7 @@ function EditorPage() {
           </GlassCard>
 
           <GlassCard className="flex items-center justify-center bg-black/30 p-3">
-            <img src={generations[3].image} alt="Editing canvas" className="max-h-[70vh] w-auto rounded-xl object-contain" />
+            <img src={generations[3]!.image} alt="Editing canvas" className="max-h-[70vh] w-auto rounded-xl object-contain" />
           </GlassCard>
 
           <GlassCard className="p-0">
@@ -104,7 +104,7 @@ function EditorPage() {
               <TabsContent value="layers" className="space-y-2 p-4">
                 {["Text overlay", "Inpaint mask", "Color grade", "Base image"].map((l) => (
                   <div key={l} className="flex items-center gap-3 rounded-xl border border-border/60 p-2.5 text-sm">
-                    <img src={generations[3].image} alt="" className="size-9 rounded-md object-cover" />
+                    <img src={generations[3]!.image} alt="" className="size-9 rounded-md object-cover" />
                     <span className="flex-1 truncate">{l}</span>
                     <Badge variant="outline" className="text-[10px]">100%</Badge>
                   </div>

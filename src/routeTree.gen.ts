@@ -14,21 +14,34 @@ import { Route as ApiKeysRouteImport } from './routes/api-keys'
 import { Route as BackgroundRemoverRouteImport } from './routes/background-remover'
 import { Route as BatchRouteImport } from './routes/batch'
 import { Route as BillingRouteImport } from './routes/billing'
+import { Route as ChangelogRouteImport } from './routes/changelog'
 import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as DocsRouteImport } from './routes/docs'
 import { Route as EditorRouteImport } from './routes/editor'
 import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as FeedbackRouteImport } from './routes/feedback'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GenerateRouteImport } from './routes/generate'
+import { Route as HelpRouteImport } from './routes/help'
 import { Route as HistoryRouteImport } from './routes/history'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as ModelsRouteImport } from './routes/models'
 import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ShortcutsRouteImport } from './routes/shortcuts'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as TemplatesRouteImport } from './routes/templates'
 import { Route as UpscalerRouteImport } from './routes/upscaler'
 import { Route as UsageRouteImport } from './routes/usage'
 import { Route as VariationsRouteImport } from './routes/variations'
+import { Route as VerifyEmailRouteImport } from './routes/verify-email'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -55,9 +68,19 @@ const BillingRoute = BillingRouteImport.update({
   path: '/billing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChangelogRoute = ChangelogRouteImport.update({
+  id: '/changelog',
+  path: '/changelog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CollectionsRoute = CollectionsRouteImport.update({
   id: '/collections',
   path: '/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsRoute = DocsRouteImport.update({
+  id: '/docs',
+  path: '/docs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EditorRoute = EditorRouteImport.update({
@@ -70,6 +93,16 @@ const FavoritesRoute = FavoritesRouteImport.update({
   path: '/favorites',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -80,9 +113,19 @@ const GenerateRoute = GenerateRouteImport.update({
   path: '/generate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HistoryRoute = HistoryRouteImport.update({
   id: '/history',
   path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ModelsRoute = ModelsRouteImport.update({
@@ -95,14 +138,44 @@ const NotificationsRoute = NotificationsRouteImport.update({
   path: '/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShortcutsRoute = ShortcutsRouteImport.update({
+  id: '/shortcuts',
+  path: '/shortcuts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamRoute = TeamRouteImport.update({
@@ -130,6 +203,11 @@ const VariationsRoute = VariationsRouteImport.update({
   path: '/variations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VerifyEmailRoute = VerifyEmailRouteImport.update({
+  id: '/verify-email',
+  path: '/verify-email',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -137,21 +215,34 @@ export interface FileRoutesByFullPath {
   '/background-remover': typeof BackgroundRemoverRoute
   '/batch': typeof BatchRoute
   '/billing': typeof BillingRoute
+  '/changelog': typeof ChangelogRoute
   '/collections': typeof CollectionsRoute
+  '/docs': typeof DocsRoute
   '/editor': typeof EditorRoute
   '/favorites': typeof FavoritesRoute
+  '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
+  '/login': typeof LoginRoute
   '/models': typeof ModelsRoute
   '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/security': typeof SecurityRoute
   '/settings': typeof SettingsRoute
+  '/shortcuts': typeof ShortcutsRoute
+  '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
   '/templates': typeof TemplatesRoute
   '/upscaler': typeof UpscalerRoute
   '/usage': typeof UsageRoute
   '/variations': typeof VariationsRoute
+  '/verify-email': typeof VerifyEmailRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -159,21 +250,34 @@ export interface FileRoutesByTo {
   '/background-remover': typeof BackgroundRemoverRoute
   '/batch': typeof BatchRoute
   '/billing': typeof BillingRoute
+  '/changelog': typeof ChangelogRoute
   '/collections': typeof CollectionsRoute
+  '/docs': typeof DocsRoute
   '/editor': typeof EditorRoute
   '/favorites': typeof FavoritesRoute
+  '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
+  '/login': typeof LoginRoute
   '/models': typeof ModelsRoute
   '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/security': typeof SecurityRoute
   '/settings': typeof SettingsRoute
+  '/shortcuts': typeof ShortcutsRoute
+  '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
   '/templates': typeof TemplatesRoute
   '/upscaler': typeof UpscalerRoute
   '/usage': typeof UsageRoute
   '/variations': typeof VariationsRoute
+  '/verify-email': typeof VerifyEmailRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -182,21 +286,34 @@ export interface FileRoutesById {
   '/background-remover': typeof BackgroundRemoverRoute
   '/batch': typeof BatchRoute
   '/billing': typeof BillingRoute
+  '/changelog': typeof ChangelogRoute
   '/collections': typeof CollectionsRoute
+  '/docs': typeof DocsRoute
   '/editor': typeof EditorRoute
   '/favorites': typeof FavoritesRoute
+  '/feedback': typeof FeedbackRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/gallery': typeof GalleryRoute
   '/generate': typeof GenerateRoute
+  '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
+  '/login': typeof LoginRoute
   '/models': typeof ModelsRoute
   '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/security': typeof SecurityRoute
   '/settings': typeof SettingsRoute
+  '/shortcuts': typeof ShortcutsRoute
+  '/signup': typeof SignupRoute
   '/team': typeof TeamRoute
   '/templates': typeof TemplatesRoute
   '/upscaler': typeof UpscalerRoute
   '/usage': typeof UsageRoute
   '/variations': typeof VariationsRoute
+  '/verify-email': typeof VerifyEmailRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -206,21 +323,34 @@ export interface FileRouteTypes {
     | '/background-remover'
     | '/batch'
     | '/billing'
+    | '/changelog'
     | '/collections'
+    | '/docs'
     | '/editor'
     | '/favorites'
+    | '/feedback'
+    | '/forgot-password'
     | '/gallery'
     | '/generate'
+    | '/help'
     | '/history'
+    | '/login'
     | '/models'
     | '/notifications'
+    | '/onboarding'
+    | '/profile'
     | '/projects'
+    | '/reset-password'
+    | '/security'
     | '/settings'
+    | '/shortcuts'
+    | '/signup'
     | '/team'
     | '/templates'
     | '/upscaler'
     | '/usage'
     | '/variations'
+    | '/verify-email'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -228,21 +358,34 @@ export interface FileRouteTypes {
     | '/background-remover'
     | '/batch'
     | '/billing'
+    | '/changelog'
     | '/collections'
+    | '/docs'
     | '/editor'
     | '/favorites'
+    | '/feedback'
+    | '/forgot-password'
     | '/gallery'
     | '/generate'
+    | '/help'
     | '/history'
+    | '/login'
     | '/models'
     | '/notifications'
+    | '/onboarding'
+    | '/profile'
     | '/projects'
+    | '/reset-password'
+    | '/security'
     | '/settings'
+    | '/shortcuts'
+    | '/signup'
     | '/team'
     | '/templates'
     | '/upscaler'
     | '/usage'
     | '/variations'
+    | '/verify-email'
   id:
     | '__root__'
     | '/'
@@ -250,21 +393,34 @@ export interface FileRouteTypes {
     | '/background-remover'
     | '/batch'
     | '/billing'
+    | '/changelog'
     | '/collections'
+    | '/docs'
     | '/editor'
     | '/favorites'
+    | '/feedback'
+    | '/forgot-password'
     | '/gallery'
     | '/generate'
+    | '/help'
     | '/history'
+    | '/login'
     | '/models'
     | '/notifications'
+    | '/onboarding'
+    | '/profile'
     | '/projects'
+    | '/reset-password'
+    | '/security'
     | '/settings'
+    | '/shortcuts'
+    | '/signup'
     | '/team'
     | '/templates'
     | '/upscaler'
     | '/usage'
     | '/variations'
+    | '/verify-email'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -273,21 +429,34 @@ export interface RootRouteChildren {
   BackgroundRemoverRoute: typeof BackgroundRemoverRoute
   BatchRoute: typeof BatchRoute
   BillingRoute: typeof BillingRoute
+  ChangelogRoute: typeof ChangelogRoute
   CollectionsRoute: typeof CollectionsRoute
+  DocsRoute: typeof DocsRoute
   EditorRoute: typeof EditorRoute
   FavoritesRoute: typeof FavoritesRoute
+  FeedbackRoute: typeof FeedbackRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   GalleryRoute: typeof GalleryRoute
   GenerateRoute: typeof GenerateRoute
+  HelpRoute: typeof HelpRoute
   HistoryRoute: typeof HistoryRoute
+  LoginRoute: typeof LoginRoute
   ModelsRoute: typeof ModelsRoute
   NotificationsRoute: typeof NotificationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
   ProjectsRoute: typeof ProjectsRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  SecurityRoute: typeof SecurityRoute
   SettingsRoute: typeof SettingsRoute
+  ShortcutsRoute: typeof ShortcutsRoute
+  SignupRoute: typeof SignupRoute
   TeamRoute: typeof TeamRoute
   TemplatesRoute: typeof TemplatesRoute
   UpscalerRoute: typeof UpscalerRoute
   UsageRoute: typeof UsageRoute
   VariationsRoute: typeof VariationsRoute
+  VerifyEmailRoute: typeof VerifyEmailRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -327,11 +496,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BillingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/changelog': {
+      id: '/changelog'
+      path: '/changelog'
+      fullPath: '/changelog'
+      preLoaderRoute: typeof ChangelogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/collections': {
       id: '/collections'
       path: '/collections'
       fullPath: '/collections'
       preLoaderRoute: typeof CollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/editor': {
@@ -348,6 +531,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FavoritesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -362,11 +559,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GenerateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/history': {
       id: '/history'
       path: '/history'
       fullPath: '/history'
       preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/models': {
@@ -383,6 +594,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -390,11 +615,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/settings': {
       id: '/settings'
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shortcuts': {
+      id: '/shortcuts'
+      path: '/shortcuts'
+      fullPath: '/shortcuts'
+      preLoaderRoute: typeof ShortcutsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/team': {
@@ -432,6 +685,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VariationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/verify-email': {
+      id: '/verify-email'
+      path: '/verify-email'
+      fullPath: '/verify-email'
+      preLoaderRoute: typeof VerifyEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -441,21 +701,34 @@ const rootRouteChildren: RootRouteChildren = {
   BackgroundRemoverRoute: BackgroundRemoverRoute,
   BatchRoute: BatchRoute,
   BillingRoute: BillingRoute,
+  ChangelogRoute: ChangelogRoute,
   CollectionsRoute: CollectionsRoute,
+  DocsRoute: DocsRoute,
   EditorRoute: EditorRoute,
   FavoritesRoute: FavoritesRoute,
+  FeedbackRoute: FeedbackRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   GalleryRoute: GalleryRoute,
   GenerateRoute: GenerateRoute,
+  HelpRoute: HelpRoute,
   HistoryRoute: HistoryRoute,
+  LoginRoute: LoginRoute,
   ModelsRoute: ModelsRoute,
   NotificationsRoute: NotificationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
   ProjectsRoute: ProjectsRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
+  SecurityRoute: SecurityRoute,
   SettingsRoute: SettingsRoute,
+  ShortcutsRoute: ShortcutsRoute,
+  SignupRoute: SignupRoute,
   TeamRoute: TeamRoute,
   TemplatesRoute: TemplatesRoute,
   UpscalerRoute: UpscalerRoute,
   UsageRoute: UsageRoute,
   VariationsRoute: VariationsRoute,
+  VerifyEmailRoute: VerifyEmailRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

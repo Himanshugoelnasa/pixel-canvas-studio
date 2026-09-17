@@ -80,7 +80,7 @@ function ProjectsPage() {
                         <DropdownMenuItem onClick={() => toast.success("Project renamed")}>Rename</DropdownMenuItem>
                         <DropdownMenuItem onClick={() => toast.success("Project shared")}>Share</DropdownMenuItem>
                         <DropdownMenuItem onClick={() => toast.success("Export queued")}>Export</DropdownMenuItem>
-                        <DropdownMenuItem variant="destructive" onClick={() => toast.success("Project deleted")}>Delete</DropdownMenuItem>
+                        <DropdownMenuItem className="text-destructive" onClick={() => toast.success("Project deleted")}>Delete</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </div>

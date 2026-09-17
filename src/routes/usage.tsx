@@ -47,7 +47,7 @@ function UsagePage() {
             <Tabs value={range} onValueChange={setRange}>
               <TabsList>
                 {[["7", "7 days"], ["30", "30 days"], ["90", "90 days"], ["custom", "Custom"]].map(([v, l]) => (
-                  <TabsTrigger key={v} value={v} className="text-xs">{l}</TabsTrigger>
+                  <TabsTrigger key={v} value={v!} className="text-xs">{l}</TabsTrigger>
                 ))}
               </TabsList>
             </Tabs>

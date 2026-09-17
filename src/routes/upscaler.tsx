@@ -28,7 +28,7 @@ export const Route = createFileRoute("/upscaler")({
 function UpscalerPage() {
   const [scale, setScale] = useState("4×");
   const [busy, setBusy] = useState(false);
-  const src = generations[1];
+  const src = generations[1]!;
 
   return (
     <AppShell>
@@ -36,7 +36,7 @@ function UpscalerPage() {
         <PageHeader title="AI Image Upscaler" subtitle="Rescue detail, print at poster size." />
         <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
           <GlassCard className="space-y-4">
-            <CompareSlider before={src.image} after={generations[2].image} labelBefore="Original 1024px" labelAfter={`Upscaled ${scale}`} />
+            <CompareSlider before={src.image} after={generations[2]!.image} labelBefore="Original 1024px" labelAfter={`Upscaled ${scale}`} />
             {busy ? <Progress value={64} className="h-2" /> : null}
             <div className="flex flex-wrap gap-2">
               <Button variant="outline" onClick={() => toast.success("Image uploaded")}><Upload className="mr-2 size-4" />Upload image</Button>

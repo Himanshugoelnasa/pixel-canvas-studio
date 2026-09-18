@@ -14,7 +14,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { cn } from "@/lib/utils";
 import { batchJobs, generations, type BatchJob, type Generation } from "@/lib/mock-data";
 
-export const Route = createFileRoute("/batch/$jobId")({
+export const Route = createFileRoute("/batch_/$jobId")({
   loader: ({ params }) => {
     const job = batchJobs.find((b) => b.id === params.jobId);
     if (!job) throw notFound();

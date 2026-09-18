@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { generations, projects, type Generation } from "@/lib/mock-data";
 
-export const Route = createFileRoute("/projects/$projectId")({
+export const Route = createFileRoute("/projects_/$projectId")({
   loader: ({ params }) => {
     const project = projects.find((p) => p.id === params.projectId);
     if (!project) throw notFound();

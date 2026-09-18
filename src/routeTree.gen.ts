@@ -42,6 +42,8 @@ import { Route as UpscalerRouteImport } from './routes/upscaler'
 import { Route as UsageRouteImport } from './routes/usage'
 import { Route as VariationsRouteImport } from './routes/variations'
 import { Route as VerifyEmailRouteImport } from './routes/verify-email'
+import { Route as BatchJobIdRouteImport } from './routes/batch_.$jobId'
+import { Route as ProjectsProjectIdRouteImport } from './routes/projects_.$projectId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -208,6 +210,16 @@ const VerifyEmailRoute = VerifyEmailRouteImport.update({
   path: '/verify-email',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BatchJobIdRoute = BatchJobIdRouteImport.update({
+  id: '/batch_/$jobId',
+  path: '/batch/$jobId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
+  id: '/projects_/$projectId',
+  path: '/projects/$projectId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -243,6 +255,8 @@ export interface FileRoutesByFullPath {
   '/usage': typeof UsageRoute
   '/variations': typeof VariationsRoute
   '/verify-email': typeof VerifyEmailRoute
+  '/batch/$jobId': typeof BatchJobIdRoute
+  '/projects/$projectId': typeof ProjectsProjectIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -278,6 +292,8 @@ export interface FileRoutesByTo {
   '/usage': typeof UsageRoute
   '/variations': typeof VariationsRoute
   '/verify-email': typeof VerifyEmailRoute
+  '/batch/$jobId': typeof BatchJobIdRoute
+  '/projects/$projectId': typeof ProjectsProjectIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -314,6 +330,8 @@ export interface FileRoutesById {
   '/usage': typeof UsageRoute
   '/variations': typeof VariationsRoute
   '/verify-email': typeof VerifyEmailRoute
+  '/batch_/$jobId': typeof BatchJobIdRoute
+  '/projects_/$projectId': typeof ProjectsProjectIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -351,6 +369,8 @@ export interface FileRouteTypes {
     | '/usage'
     | '/variations'
     | '/verify-email'
+    | '/batch/$jobId'
+    | '/projects/$projectId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -386,6 +406,8 @@ export interface FileRouteTypes {
     | '/usage'
     | '/variations'
     | '/verify-email'
+    | '/batch/$jobId'
+    | '/projects/$projectId'
   id:
     | '__root__'
     | '/'
@@ -421,6 +443,8 @@ export interface FileRouteTypes {
     | '/usage'
     | '/variations'
     | '/verify-email'
+    | '/batch_/$jobId'
+    | '/projects_/$projectId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -457,6 +481,8 @@ export interface RootRouteChildren {
   UsageRoute: typeof UsageRoute
   VariationsRoute: typeof VariationsRoute
   VerifyEmailRoute: typeof VerifyEmailRoute
+  BatchJobIdRoute: typeof BatchJobIdRoute
+  ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -692,6 +718,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VerifyEmailRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/batch_/$jobId': {
+      id: '/batch_/$jobId'
+      path: '/batch/$jobId'
+      fullPath: '/batch/$jobId'
+      preLoaderRoute: typeof BatchJobIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects_/$projectId': {
+      id: '/projects_/$projectId'
+      path: '/projects/$projectId'
+      fullPath: '/projects/$projectId'
+      preLoaderRoute: typeof ProjectsProjectIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -729,6 +769,8 @@ const rootRouteChildren: RootRouteChildren = {
   UsageRoute: UsageRoute,
   VariationsRoute: VariationsRoute,
   VerifyEmailRoute: VerifyEmailRoute,
+  BatchJobIdRoute: BatchJobIdRoute,
+  ProjectsProjectIdRoute: ProjectsProjectIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
